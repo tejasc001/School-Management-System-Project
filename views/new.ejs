@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="/stylesheets/closebtn.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/new.css" type="text/css">
+</head>
+<body>
+    
+    <script src="/javascripts/closebtn.js"></script>
+    <% if (messages.success) { %>
+        <div class="alert alert-success" id="success-message">
+            <%= messages.success %>
+            <button class="close" onclick="closeFlashMessage('success-message')">&times;</button>
+        </div>
+    <% } %>
+    <% if (messages.error) { %>
+        <div class="alert alert-danger" id="error-message">
+            <%= messages.error %>
+            <button class="close" onclick="closeFlashMessage('error-message')">&times;</button>
+        </div>
+    <% } %>
+
+
+
+
+    <form action="/upload" method="POST">
+
+        <label for="studentname">Enter student name</label>
+        <input type="text" name="studentname" placeholder="Student name" id="studentname" required>
+<br>
+
+<label for="gender">Choose the gender</label>
+        <select name="gender" id="gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+
+        <br>
+
+        <label for="datepicker">Date:</label>
+        <input type="date" id="datepicker" name="selectedDate" required>
+
+
+        <br>
+        <br>
+
+        <label for="address">Enter address</label>
+        <textarea id="address" name="address" rows="4" cols="50" id="address">
+            </textarea>
+
+<br>
+            <label for="section">Choose a section</label>
+        <select name="section" id="section">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+
+<br>
+        <label for="standard">Section</label>
+        <select name="standard" id="standard">
+            <option value="IX">IX</option>
+            <option value="X">X</option>
+        </select>
+<br>
+        <button type="submit">Submit</button>
+        <button><a href="/index">Home</a></button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<% layout('/layouts/boilerplate') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/closebtn.css" type="text/css">
+</head>
+
+<body>
+
+
+    <script src="/javascripts/closebtn.js"></script>
+    <% if (messages.success) { %>
+        <div class="alert alert-success" id="success-message">
+            <%= messages.success %>
+            <button class="close" onclick="closeFlashMessage('success-message')">&times;</button>
+        </div>
+    <% } %>
+
+
+    <div class="card-container">
+        <% rr.forEach(student => { %>
+            <div class="card">
+                <h3 class="student-id">Student ID: <%= student.std_id %></h3>
+                <p class="student-name">Name: <%= student.student_name %></p>
+                <button class="green-button"><a href="/student/<%= student.std_id %>" class="view-details ">View Details</a></button>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

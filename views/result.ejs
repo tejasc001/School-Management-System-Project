@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="/stylesheets/closebtn.css" type="text/css">
+</head>
+<body>
+
+
+
+    <script src="/javascripts/closebtn.js"></script>
+    <% if (messages.success) { %>
+        <div class="alert alert-success" id="success-message">
+            <%= messages.success %>
+            <button class="close" onclick="closeFlashMessage('success-message')">&times;</button>
+        </div>
+    <% } %>
+
+    <h1>Subject Marks</h1>
+    <table>
+        <tr>
+            <th>Subject ID</th>
+            <th>Subject Name</th>
+            <th>Subject Code</th>
+            <th></th>
+            <th>Marks</th>
+        </tr>
+        <% jj.forEach(subject => { %>
+            <tr>
+                <td><%= subject.sub_id %></td>
+                <td><%= subject.subject_name %></td>
+                <td><%= subject.subject_code %></td>
+                <td><%= subject.marks %></td>
+            </tr>
+            <% }); %>
+    </table>
+  
+    <button><a href="/student/<%=id%>">Back </a></button>
+    <button><a href="/marks/<%=id%>">Enter marks</a></button>
+</body>
+</html>

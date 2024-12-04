@@ -1,0 +1,48 @@
+<% layout('/layouts/boilerplate') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="/stylesheets/showstdsyles.css" type="text/css">
+</head>
+<body>
+    <% if (messages.success) { %>
+        <div class="alert alert-success" id="success-message">
+            <%= messages.success %>
+            <button class="close" onclick="closeFlashMessage('success-message')">&times;</button>
+        </div>
+    <% } %>
+    <% if (messages.error) { %>
+        <div class="alert alert-danger" id="error-message">
+            <%= messages.error %>
+            <button class="close" onclick="closeFlashMessage('error-message')">&times;</button>
+        </div>
+    <% } %>
+
+    <div class="cards-container">
+        <% dd.forEach(student => { %>
+            <div class="card">
+                <div class="card-body">
+                    <strong>Name:</strong> <%= student.student_name %><br>
+                    <strong>Date of Birth:</strong> <%= student.dob.toDateString() %><br>
+                    <strong>Gender:</strong> <%= student.gender %><br>
+                    <strong>Address:</strong> <%= student.address %><br>
+                    <strong>Section:</strong> <%= student.section_name %><br>
+                    <strong>Standard:</strong> <%= student.standard_name %>
+                </div>
+                <div class="card-footer">
+                    <button><a href="/marks/<%=student.std_id%>">Enter marks</a></button>
+                    <button><a href="/index">Home</a></button>
+                    <button><a href="/upload">New Student</a></button>
+                </div>
+                    
+                
+            </div>
+        <% }); %>
+    </div>
+
+    
+</body>
+</html>

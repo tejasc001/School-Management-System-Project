@@ -1,0 +1,55 @@
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<% if (messages.success) { %>
+	<div class="alert alert-success" id="success-message">
+		<%= messages.success %>
+		<button class="close" onclick="closeFlashMessage('success-message')">&times;</button>
+	</div>
+<% } %>
+
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Welcome to School Management System</h1>
+		<p>Created by team Syntax Error</p>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>SignUp</h5>
+		<p>Sign In to get full access to the Bot.</p>
+	
+            <form action="/register" method="POST" novalidate>
+			<input type="text" placeholder="Username" name="username" id="username">
+			<br>
+			<input type="email" placeholder="E-mail" name="email" id="email">
+			<br>
+			<input type="password" placeholder="Password" name="password" id="password" >
+            <br><br>
+			<br>
+			<button>Signup</button>
+        </form>	
+	</div>
+	
+</div>
+<!-- partial -->
+  
+</body>
+</html>
+
+
+
